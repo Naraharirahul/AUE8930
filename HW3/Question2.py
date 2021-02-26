@@ -6,6 +6,7 @@ img = mpimg.imread('Images/Lenna.jpg')
 
 # 2.1
 # Using the NTSC approach 
+
 grayimg = 0.21 * img[:,:,0] + 0.72 * img[:,:,1] + 0.07 * img[:,:,2]
 
 bins = np.zeros(256)
@@ -14,10 +15,10 @@ for i in range(256):
         a = int(grayimg[i,j])
         bins[a] = bins[a] + 1
 bins_a = np.arange(0,256,1)
-# plt.plot(bins_a,bins)
-# plt.xlabel('Pixel intensity')
-# plt.ylabel('Pixel frequency')
-# plt.show()
+plt.plot(bins_a,bins)
+plt.xlabel('Pixel intensity')
+plt.ylabel('Pixel frequency')
+plt.show()
 
 # 2.2
 
@@ -27,10 +28,10 @@ for i in range(0,256):
     acumm_bins[i] = acumm_bins[i - 1] + bins[i]
 
 acumm_bins_a = np.arange(0,256,1)
-# plt.plot(acumm_bins_a,acumm_bins)
-# plt.xlabel(' Pixel intensity')
-# plt.ylabel('Cummulative Pixel frequency')
-# plt.show()
+plt.plot(acumm_bins_a,acumm_bins)
+plt.xlabel(' Pixel intensity')
+plt.ylabel('Cummulative Pixel frequency')
+plt.show()
 
 # 2.3
 
